@@ -1,24 +1,62 @@
-import logo from './logo.svg';
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import './App.css';
+import Items from './views/Items';
+import Header from './components/Header';
+import BottomNavigation from './components/BottomNavigation';
+// import { primary } from './design/color';
+import Settings from './views/Settings';
+import { useContext, useState } from 'react';
+import { Context, ContextController } from './context';
 
 function App() {
+  // debugger;
+  const [state] = useContext(Context);
+
+  // const [, setState] = useState(0);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div
+        className="container"
+        style={{ minHeight: '100vh', backgroundColor: state.primary }}
+      >
+        <Header
+        // onAdd={() => setShowAddTask(!showAddTask)}
+        // showAdd={showAddTask}
+        />
+        {/* <Route
+          path="/"
+          exact
+          render={(props) => (
+            <>
+              {showAddTask && <AddTask onAdd={addTask} />}
+              {tasks.length > 0 ? (
+                <Tasks
+                  tasks={tasks}
+                  onDelete={deleteTask}
+                  onToggle={toggleReminder}
+                />
+              ) : (
+                'No Tasks To Show'
+              )}
+            </>
+          )}
+        /> */}
+        <Switch>
+          <Route path="/settings">
+            <Settings
+            // reload={() => {
+            //   setState(Math.random());
+            // }}
+            />
+          </Route>
+          <Route path="/">
+            <Items />
+          </Route>
+        </Switch>
+        <BottomNavigation />
+        {/* <Footer /> */}
+      </div>
+    </Router>
   );
 }
 
