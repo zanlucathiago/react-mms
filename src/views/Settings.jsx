@@ -27,6 +27,7 @@ function Settings() {
 
   return (
     <div>
+      <Header></Header>
       <FormControl className={classes.formControl}>
         <InputLabel id="demo-simple-select-label">Tema</InputLabel>
         <Select
