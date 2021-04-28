@@ -1,20 +1,19 @@
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
-// import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import themes from '../themes';
-import { getColors, getTheme, setTheme } from '../design/color';
 import { Link } from 'react-router-dom';
+import themes from '../themes';
+import { getColors, getTheme } from '../design/color';
 import { Context } from '../context';
+import InnerHeader from '../components/InnerHeader';
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(1),
     minWidth: 120,
-    // width: '100%',
   },
   selectEmpty: {
     marginTop: theme.spacing(2),
@@ -22,12 +21,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Settings() {
-  const [state, setState] = useContext(Context);
+  const [, setState] = useContext(Context);
   const classes = useStyles();
 
   return (
     <div>
-      <Header></Header>
+      <InnerHeader />
       <FormControl className={classes.formControl}>
         <InputLabel id="demo-simple-select-label">Tema</InputLabel>
         <Select

@@ -146,6 +146,7 @@ function PrimarySearchAppBar() {
     <div className={classes.grow}>
       <AppBar position="static">
         <Toolbar
+          disableGutters
           style={{
             backgroundColor: state.primary,
             justifyContent: 'space-between',
