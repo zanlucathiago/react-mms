@@ -149,6 +149,7 @@ function PrimarySearchAppBar() {
           disableGutters
           style={{
             backgroundColor: state.primary,
+            color: state.onPrimary,
             justifyContent: 'space-between',
           }}
         >

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 // import axios from 'axios';
-import color from './design/color';
+import { getColors } from './design/color';
 
 export const Context = React.createContext();
 
@@ -24,7 +24,7 @@ export function ContextController({ children }) {
   //   // dispatch: action => this.setState(state => reducer(state, action))
   // };
 
-  const [state, setState] = useState(color);
+  const [state, setState] = useState(getColors());
 
   // useEffect(() => {
   //   axios

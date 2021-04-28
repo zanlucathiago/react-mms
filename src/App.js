@@ -12,7 +12,11 @@ function App() {
     <Router>
       <div
         className="container"
-        style={{ minHeight: '100vh', backgroundColor: state.primary }}
+        style={{
+          minHeight: '100vh',
+          backgroundColor: state.primary,
+          color: state.onPrimary,
+        }}
       >
         <Switch>
           <Route path="/settings">

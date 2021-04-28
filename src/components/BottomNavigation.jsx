@@ -6,7 +6,6 @@ import RestoreIcon from '@material-ui/icons/Restore';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import { Context } from '../context';
-// import { primary, secondary } from '../design/color';
 
 const useStyles = makeStyles({
   root: {
@@ -41,6 +40,7 @@ function SimpleBottomNavigation() {
           value === 0
             ? {
                 backgroundColor: state.primary,
+                color: state.onPrimary,
                 borderBottomLeftRadius: 14,
                 borderBottomRightRadius: 14,
               }
@@ -54,6 +54,7 @@ function SimpleBottomNavigation() {
           value === 1
             ? {
                 backgroundColor: state.primary,
+                color: state.onPrimary,
                 borderBottomLeftRadius: 14,
                 borderBottomRightRadius: 14,
               }
@@ -67,6 +68,7 @@ function SimpleBottomNavigation() {
           value === 2
             ? {
                 backgroundColor: state.primary,
+                color: state.onPrimary,
                 borderBottomLeftRadius: 14,
                 borderBottomRightRadius: 14,
               }
